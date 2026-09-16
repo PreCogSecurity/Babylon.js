@@ -126,3 +126,8 @@ node_modules
 
 # for VSCode
 .vscode
+
+# Generated minified bundles (built by Tools/Gulp; the committed copies under
+# dist/ and */test/refs/ are historical release artifacts)
+*.max.js
+node_modules/

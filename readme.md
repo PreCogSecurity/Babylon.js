@@ -37,6 +37,65 @@ You can help by testing or contributing to the next version.
  - Unity 5 [exporter](https://github.com/BabylonJS/Babylon.js/tree/master/Exporters/Unity%205) can be used to export your geometries from Unity 5 scene editor
  - FBX command line [exporter](https://github.com/BabylonJS/Babylon.js/tree/master/Exporters/FBX) can be used to generate a .babylon file from .FBX file (animations are supported)
 
+## Development
+
+### Prerequisites
+
+- Node.js 20.19 or newer (required by the test and lint toolchain)
+- npm 9 or newer
+
+### Install
+
+Dependencies are pinned in `package-lock.json`, so installs are reproducible:
+
+```
+npm ci
+```
+
+### Test
+
+The unit test suite lives in `test/unit/` and exercises the compiled math
+module (`src/Math/babylon.math.js`) with real numeric assertions:
+
+```
+npm test
+```
+
+### Lint and typecheck
+
+```
+npm run lint
+npm run typecheck
+```
+
+### Build
+
+Compiles the TypeScript sources in `src/` to JavaScript:
+
+```
+npm run build
+```
+
+The legacy full-bundle build (minified `babylon.max.js` outputs) lives in
+`Tools/Gulp` and can be run with `npm run build:bundles`.
+
+### Dependency audit
+
+```
+npm run audit
+```
+
+### Docker
+
+The repository ships a `Dockerfile` and `docker-compose.yml` so the whole
+verification pipeline can run in an isolated container:
+
+```
+docker compose up
+```
+
+This installs the pinned dependencies and runs the unit test suite.
+
 ## Features
 To get a complete list of supported features, please visit our [website](http://www.babylonjs.com/#specifications).
 
