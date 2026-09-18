@@ -1,0 +1,7 @@
+# Babylon.js is a library, so the "app" here is its verification pipeline:
+# `docker compose up` installs the pinned dependencies and runs the unit test
+# suite inside an isolated container.
+services:
+  babylonjs:
+    build: .
+    command: npm test

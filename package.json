@@ -1,0 +1,34 @@
+{
+  "name": "babylonjs",
+  "version": "2.4.0-alpha",
+  "description": "Babylon.js is a complete JavaScript framework for building 3D games with HTML 5 and WebGL",
+  "private": true,
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BabylonJS/Babylon.js.git"
+  },
+  "keywords": [
+    "3D",
+    "WebGL",
+    "WebAudio",
+    "Shaders",
+    "Realtime"
+  ],
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "test": "mocha test/unit/*.spec.js",
+    "lint": "eslint test/",
+    "typecheck": "tsc --noEmit -p src/tsconfig.json",
+    "build": "tsc -p src/tsconfig.json",
+    "build:bundles": "cd Tools/Gulp && npm install && gulp typescript",
+    "audit": "npm audit --audit-level=high"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "mocha": "^12.0.1",
+    "typescript": "^1.8.10"
+  }
+}
